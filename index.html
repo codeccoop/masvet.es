@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasVet: Clínica veterinària</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main class="landing">
+        <div class="banner">
+            <p>Pàgina web en construcció, pròximament més informació</p>
+            <button>x</button>
+        </div>
+        <section class="landing__section left">
+            <picture>
+                <source srcset="images/logotipo.png" type="image/png">
+                <img src="images/logotipo.webp" type="image/webp" alt="Logotip de la web">
+            </picture>
+            <p>Clínica veterinària dedicada a mascotes, dotada de consultes independents per a gossos i gats, laboratori, radiologia, ecografia, quiròfan, hospitalització i venda de productes.</p>
+        </section>
+        <section class="landing__section right">
+            <div class="landing__contact">
+                <p> Demana'ns cita prèvia o visita'ns a:</p>
+                <div id="map"></div>
+                <ul>
+                    <li><a href="https://www.google.com/maps/place/Carrer+Montserrat,+6,+08783+Masquefa,+Barcelona/@41.5027163,1.8113813,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4621f380a8317:0x11c79bccf4ee259b!8m2!3d41.5027123!4d1.81357" target="_blank">Montserrat 6, 08783, Masquefa</a></li>
+                    <li><a href="mailto:info@masvet.es" target="_blank">info@masvet.es</a></li>
+                    <li><a href="https://wa.me/34689393170" target="_blank">689393170</a></li>
+                    <li><a href="tel:+34934069108" target="_blank">934069108</a></li>
+                </ul>
+            </div>
+            
+        </section>
+    </main>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoib3J6b2MiLCJhIjoiY2lzZGEzNXhmMDAwdjJvcGZ4NXU2bzU0NCJ9.RzrN_JISe561WfI1SjWCvw';
+        const map = new mapboxgl.Map({
+         container: 'map', // container ID
+         style: 'mapbox://styles/mapbox/streets-v11', // style URL
+         center: [1.81346, 41.50281], // starting position [lng, lat]
+         zoom: 14.5 // starting zoom
+        });
+        map.addControl(new mapboxgl.NavigationControl());
+        new mapboxgl.Marker().setLngLat([1.81346, 41.50281]).addTo(map);
+     </script>
+     <script>
+         const $banner = document.querySelector(".banner");
+         $banner.classList.add("visible");
+         const $closebtn = $banner.children[1];
+         $closebtn.addEventListener('click', () => {
+            $banner.parentElement.removeChild($banner);
+         });
+
+     </script>
+</body>
+
+</html>

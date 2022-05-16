@@ -12,8 +12,10 @@
 <body>
     <main class="landing">
         <div class="banner">
-            <p>Pàgina web en construcció, pròximament més informació</p>
-            <button>x</button>
+            <div class="banner__wrapper">
+                <p>Pàgina web en construcció, pròximament més informació</p>
+                <button>x</button>
+                </div>
         </div>
         <section class="landing__section left">
             <picture>
@@ -25,7 +27,7 @@
         <section class="landing__section right">
             <div class="landing__contact">
                 <p> Demana'ns cita prèvia o visita'ns a:</p>
-                <div id="map"></div>
+                <div id="map" class="landing__map"></div>
                 <ul>
                     <li><a href="https://www.google.com/maps/place/Carrer+Montserrat,+6,+08783+Masquefa,+Barcelona/@41.5027163,1.8113813,17z/data=!3m1!4b1!4m5!3m4!1s0x12a4621f380a8317:0x11c79bccf4ee259b!8m2!3d41.5027123!4d1.81357" target="_blank">Montserrat 6, 08783, Masquefa</a></li>
                     <li><a href="mailto:info@masvet.es" target="_blank">info@masvet.es</a></li>
@@ -50,7 +52,7 @@
      <script>
          const $banner = document.querySelector(".banner");
          $banner.classList.add("visible");
-         const $closebtn = $banner.children[1];
+         const $closebtn = $banner.getElementsByTagName("button")[0]
          $closebtn.addEventListener('click', () => {
             $banner.parentElement.removeChild($banner);
          });

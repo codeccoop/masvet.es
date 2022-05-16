@@ -168,12 +168,25 @@ body {
     height: 14px;
   }
 }
-@media only screen and (max-width: 980px) {
+@media only screen and (min-width: 500px and max-width: 980px) {
+  html,
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+  }
   .landing {
     flex-direction: column;
   }
   .landing__section {
     padding: 0 calc(calc(1 / 6) * 100vw);
     align-items: center;
+  }
+  .landing__map {
+    height: calc(calc(3 / 12) * 100vw);
+    border-radius: 2px;
+  }
+  .landing__section.left, .landing__section.right {
+    padding-top: calc(calc(1 / 12) * 100vw);
+    padding-bottom: calc(calc(1 / 12) * 100vw);
   }
 }

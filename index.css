@@ -22,7 +22,7 @@ body {
   width: 100vw;
   background-color: #323232;
   transform: translate(0, -100%);
-  transition: transform 300ms ease-in 1000ms, box-shadow 300ms ease-in 1000ms;
+  transition: transform 300ms ease-in 2000ms, box-shadow 300ms ease-in 2000ms;
 }
 .banner.visible {
   transform: translate(0, 0);
@@ -126,16 +126,16 @@ body {
   transform: translateY(-50%);
 }
 .landing__contact li:nth-child(1)::before {
-  background-image: url(/images/icons/marker-icon.png);
+  background-image: url(images/icons/marker-icon.svg);
 }
 .landing__contact li:nth-child(2)::before {
-  background-image: url(/images/icons/email-icon.png);
+  background-image: url(images/icons/email-icon.svg);
 }
 .landing__contact li:nth-child(3)::before {
-  background-image: url(/images/icons/whatsapp-icon.png);
+  background-image: url(images/icons/whatsapp-icon.svg);
 }
 .landing__contact li:nth-child(4)::before {
-  background-image: url(/images/icons/phone-icon.png);
+  background-image: url(images/icons/phone-icon.svg);
 }
 @media (max-width: 980px) {
   html,
